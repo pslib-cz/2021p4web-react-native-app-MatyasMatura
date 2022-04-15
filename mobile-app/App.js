@@ -8,6 +8,7 @@ export default function App() {
 	const [movement, setMovement] = useState(0);
 	const [message, setMessage] = useState("");
 	const [answers, setAnswers] = useState([]);
+	let list = [];
 
 	const arduinoMap = (x, in_min, in_max, out_min, out_max) => {
 		let helper = Math.round((x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min);
@@ -19,15 +20,15 @@ export default function App() {
 	const logic = value => {
 		//setMovement(value);
 		//console.log("26L " + answers.length);
-		arduinoMap(value, 1.2, 3.8, 0, answers.length);
+		arduinoMap(value, 1.1, 3.5, 1, answers.length);
 
 		if (movement >= answers.length) {
 			setMovement(answers.length);
 		}
 
 		console.log("33L " + movement);
-		console.log("34L " + answers[movement]);
-		setMessage(answers[movement]);
+		console.log("34L " + answers[movement - 1]);
+		setMessage(answers[movement - 1]);
 	};
 
 	useEffect(() => {

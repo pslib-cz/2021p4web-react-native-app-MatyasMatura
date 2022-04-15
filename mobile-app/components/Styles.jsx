@@ -20,7 +20,7 @@ const Styles = StyleSheet.create({
 		height: 110,
 	},
 	headerText: {
-		fontSize: 36,
+		fontSize: 30,
 		paddingTop: 30
 	},
 	footer: {

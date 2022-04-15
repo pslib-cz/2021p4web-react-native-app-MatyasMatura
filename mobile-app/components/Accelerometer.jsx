@@ -13,9 +13,9 @@ const MyAccelerometer = props => {
 			Accelerometer.addListener(accelerometerData => {
 				let movement = Math.sqrt(accelerometerData.x * accelerometerData.x + accelerometerData.y * accelerometerData.y + accelerometerData.z * accelerometerData.z);
 
-				if (movement >= 1.2) {
-					if (movement > 3.8) {
-						movement = 3.8;
+				if (movement > 1.1) {
+					if (movement > 3.5) {
+						movement = 3.5;
 					}
 
 					props.onChange(movement);
